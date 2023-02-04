@@ -1,5 +1,5 @@
 public void setup(){
-  size(600, 600);
+  size(500, 500);
   rectMode(CENTER);
 }
 public void draw(){
