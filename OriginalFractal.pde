@@ -3,13 +3,7 @@ public void setup(){ //
 }
 public void draw(){
   background(0,0,0,0);
-  myFractal(0, 0, 900); 
-  myFractal(150, 0, 900);
-  myFractal(300, 0, 900);
-  myFractal(450, 0, 900);
-  myFractal(600, 0, 900);
-  myFractal(750, 0, 900);
-  myFractal(900, 0, 900);
+  myFractal(0, 0, 1200); 
 }
 public void winErr(float x, float y, float sizX, float sizY){
   beginShape();
@@ -31,9 +25,11 @@ public void winErr(float x, float y, float sizX, float sizY){
 }
 public void myFractal(int x, int y, int siz){
   winErr(x, y, siz, siz);
-  if(siz > 1){
-    myFractal(x+10,y+100, siz/2);
-    myFractal(x+10,y+100, siz/2);
+  if (siz <= 10) {
+  } else {
+    myFractal(x, y, siz / 2);
+    myFractal(x + (siz/2) + 100, y, siz / 2);
+    myFractal(x + (siz/2) + 100, y + (siz/2),siz / 2);
   }
 }
 
