@@ -28,7 +28,7 @@ public void myFractal(int x, int y, int siz){
   if (siz <= 10) {
   } else {
     myFractal(x, y, siz / 2);
-    myFractal(x + (siz/2) + 100, y, siz / 2);
+    myFractal(x + siz + 100, y, siz / 2);
     myFractal(x + (siz/2) + 100, y + (siz/2),siz / 2);
   }
 }
