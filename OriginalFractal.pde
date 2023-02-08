@@ -3,7 +3,7 @@ public void setup(){ //
 }
 public void draw(){
   background(0,0,0,0);
-  myFractal(0, 0, mouseX); 
+  myFractal(0, 0, mouseX, mouseY); 
 }
 public void winErr(float x, float y, float sizX, float sizY){
   beginShape();
@@ -23,17 +23,19 @@ public void winErr(float x, float y, float sizX, float sizY){
   line(x+80,y+50,x+150,y+50);
   endShape(CLOSE);
 }
-public void myFractal(int x, int y, int siz){
+public void myFractal(int x, int y, int siz, int siza){
   winErr(x, y, siz, siz);
   if (siz <= 10) {
   } else {
-    myFractal(x, y, siz / 2);
-    myFractal(x + (siz) + 100, y, siz / 2);
-    myFractal(x + (siz/2) + 100, y + (siz/2),siz / 2);
+    myFractal(x, y, siz / 2, siza/4);
+    myFractal(x + (siz) + 100, y, siz / 2, siza / 4);
+    myFractal(x + (siz/2) + 100, y + (siz/2),siz / 2, siza/4);
   }
 }
 
 
+
+//Error popup thing
 /*noStroke();
   fill(#262AD3);
   rect(0,0,200,100,10,10,0,0); //blue
