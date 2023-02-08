@@ -1,10 +1,19 @@
+int test = 0;
 public void setup(){ //
   size(1200, 500);
 }
 public void draw(){
-  background(0,0,0,0);
-  myFractal(0, 0, mouseX, mouseY); 
+  background(0,0,0,0); //extra 0 at the end is transparency
+  if(mousePressed == true){
+    test = test + 100;
+    myFractal(0, 0, test, test);
+  }
+  if(mousePressed == false){
+    test = 0;
+    myFractal(0, 0, 0, 0);
+  }
 }
+
 public void winErr(float x, float y, float sizX, float sizY){
   beginShape();
   noStroke();
@@ -21,6 +30,8 @@ public void winErr(float x, float y, float sizX, float sizY){
   rect(x+30,y+60,75,25); //button
   line(x+80,y+30,x+150,y+30);
   line(x+80,y+50,x+150,y+50);
+  fill(0,0,0);
+  text("Hold me!", 40, 75); 
   endShape(CLOSE);
 }
 public void myFractal(int x, int y, int siz, int siza){
